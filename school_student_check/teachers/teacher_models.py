@@ -6,7 +6,8 @@ class Teacherinfo(models.Model):
     teacher_last_name=models.CharField(max_length=70,verbose_name="نام خانوادگی معلم")
     teacher_phone_number=models.IntegerField(verbose_name="شماره تلفن")
     student=models.ForeignKey(Studentinfo,on_delete=models.CASCADE)
-
+    teahcer_grade=models.CharField(max_length=50)
+    teacher_book=models.CharField(max_length=50)
     def __str__(self):
         return f"{self.teacher_name} {self.teacher_last_name}"
 

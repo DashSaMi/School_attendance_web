@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from .teacher_models import Teacherinfo 
+from django.shortcuts import render  
 
-# Create your views here.
+def teacher_page(request):  
+    all_student=Teacherinfo.objects.all()
+    return render(request, "teachers/t.html",{"content":all_student})  

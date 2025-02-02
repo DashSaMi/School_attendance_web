@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{%block style%}
+<style>
+.container_teacher_part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+   
+}
+.student_for_teacher_table {
+    width: 50%; /* Full width */
+    border-collapse: collapse; /* Remove space between cells */
+    margin: 20px 0; /* Add some margin for spacing */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+.student_for_teacher_table th,
+.student_for_teacher_table td {
+    padding: 12px 15px; /* Add padding for spacing */
+    text-align: right; /* Align text to the right (for RTL) */
+}
+
+.student_for_teacher_table th {
+    background-color: #4CAF50; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold; /* Bold header text */
+}
+
+.student_for_teacher_table tr {
+    border-bottom: 1px solid #dddddd; /* Add a border between rows */
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.student_for_teacher_table tr:nth-child(even) {
+    background-color: #e8e8e8; /* Alternate row color */
+}
+
+.student_for_teacher_table tr:hover {
+    background-color: #faf7f7; /* Hover effect for rows */
+}
+
+.student_for_teacher_table td {
+    color: #333; /* Default text color */
+}
+
+.student_for_teacher_table th:first-child,
+.student_for_teacher_table td:first-child {
+    padding-right: 20px; /* Add extra padding to the first column */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container_teacher_part">
+    <table class="student_for_teacher_table">
+        <tr>
+            <th>نام معلم</td>
+           <th> اسم کامل دانش اموز </th>
+            <th>پایه اموزشی معلم</th>
+            <th>کتاب تدریسی</th>
+
+
+        </tr>
+        {% for item in content %}
+        <tr>
+            <td>{{item.teacher_name}} {{item.teacher_last_name}}</td>
+            <td>{{item.student}}</td>
+            <td>{{item.teahcer_grade}}</td>
+            <td>{{item.teacher_book}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
