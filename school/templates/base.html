@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstra">
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+{%block style%}
+
+{% endblock %}
+
+<style>
+
+ 
+        body {  
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+        }  
+        
+        .navbar {
+            background-color: #4CAF50; /* Main navbar color */
+            display: flex;
+            align-items: center;
+            padding: 15px 20px; /* Increased padding for better spacing */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem; /* Larger brand text */
+            font-weight: bold; /* Bold brand text */
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none; /* Remove bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 15px; /* Spacing between nav items */
+            position: relative; /* Required for dropdown positioning */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem; /* Slightly larger font size for links */
+            transition: color 0.3s; /* Smooth color transition */
+            text-decoration: none; /* Remove text decoration */
+            color: white;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold; /* Bold active link */
+            border-bottom: 2px solid white; /* Underline for active link */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #1e2024; /* Hover color */
+        }
+
+        /* Dropdown styles */
+        .dropdown-menu {
+            transition: display 0.3s;
+            display: none;
+            position: absolute;
+          margin-top: 0px !important;
+          border-radius: 10px;
+            background-color: #344c40; /* Match navbar color */
+            width: max-content;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        .dropdown-menu .dropdown-item {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block; /* Show dropdown on hover */
+        }
+        .footer {  
+            background-color: #4CAF50; /* Match footer color with navbar */  
+            color: white;  
+            text-align: center;  
+            padding: 10px;  
+            position: fixed;  
+            bottom: 0;  
+            width: 100%;  
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */  
+        }  
+        
+        .footer a {  
+            color: white;  
+            text-decoration: none;  
+        }  
+        
+        .footer a:hover {  
+            color: #f1f1f1; /* Hover color for footer links */  
+        }
+      
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home_a_tag_nav" aria-current="page" href="#">خانه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="teacher_a_tag_nav" href="#">پنل معلمان</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="student_a_tag_nav" href="#">پنل دانش‌آموزان</a>
+                        <!-- Dropdown Menu -->
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">ورود دانش‌آموز</a></li>
+                            <li><a class="dropdown-item" href="#">اطلاعات شخصی هنرجو</a></li>
+                            <li><a class="dropdown-item" href="#">تاریخچه نمرات دانش‌آموز</a></li>
+                            <li><a class="dropdown-item" href="#">تاریخچه حضور و غیاب دانش‌آموز</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="abORpr_a_tag_nav" href="#">حضور و غیاب</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {%block content%}
+
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 وب‌سایت مدرسه. تمامی حقوق محفوظ است.</p>
+            <p>
+                <a href="#">پنل معلمان</a> | 
+                <a href="#">پنل دانش‌آموزان</a> | 
+                <a href="#">حضور و غیاب</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+        {% block script %}
+        {% endblock %}
+    
+    </body>
+</html>
